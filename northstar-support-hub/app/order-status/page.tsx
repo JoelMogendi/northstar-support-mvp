@@ -22,7 +22,7 @@ export default function OrderStatusPage() {
     };
 
     const foundOrder = ordersData.find(
-      (o) => o.orderId.toLowerCase() === searchQuery.toLowerCase()
+      (o) => o.orderId.toLowerCase() === searchQuery.trim().toLowerCase()
     );
 
     if(foundOrder) {
