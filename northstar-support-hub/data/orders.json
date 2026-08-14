@@ -1,0 +1,16 @@
+[
+    {
+        "orderId": "ORD-12345",
+        "customer": "Jane Doe",
+        "status": "shipped",
+        "estimatedDelivery": "2026-08-16",
+        "items": ["Wireless Headphones", "USB-C Cable"]
+    },
+    {
+    "orderId": "ORD-123456",
+    "customer": "John Doe",
+    "status": "Processing",
+    "estimatedDelivery": "2026-08-18",
+    "items": ["Mechanical Keyboard"]
+  }
+]
