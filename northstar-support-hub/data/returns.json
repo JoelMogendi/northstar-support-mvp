@@ -1,0 +1,31 @@
+[
+  {
+    "orderId": "NS1001",
+    "item": "Wireless Headphones",
+    "returnEligible": true,
+    "returnReasons": [
+      "Item is damaged",
+      "Wrong item received",
+      "Item is no longer needed"
+    ],
+    "refundGuidance": "Once the return is approved and the item is received, the refund will be processed to the original payment method."
+  },
+  {
+    "orderId": "NS1002",
+    "item": "Running Shoes",
+    "returnEligible": true,
+    "returnReasons": [
+      "Wrong size",
+      "Item is damaged",
+      "Item is no longer needed"
+    ],
+    "refundGuidance": "Eligible returns are refunded after the returned item has been received and inspected."
+  },
+  {
+    "orderId": "NS1003",
+    "item": "Coffee Maker",
+    "returnEligible": false,
+    "returnReasons": [],
+    "refundGuidance": "This order is outside the return period and is not eligible for a return."
+  }
+]
