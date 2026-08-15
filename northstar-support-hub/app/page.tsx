@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Package, RotateCcw } from "lucide-react";
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
           <Link href="/order-status">
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
-                <CardTitle>📦 Order Status</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  <Package className="h-5 w-5" /> Order Status
+                </CardTitle>
                 <CardDescription>
                   Track your order and check delivery status
                 </CardDescription>
@@ -33,7 +36,9 @@ export default function Home() {
           <Link href="/returns">
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
-                <CardTitle>🔄 Returns &amp; Refunds</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  <RotateCcw className="h-5 w-5" /> Returns &amp; Refunds
+                </CardTitle>
                 <CardDescription>
                   Start a return or check refund eligibility
                 </CardDescription>

@@ -54,8 +54,9 @@ export default function OrderStatusPage() {
         <Button type="submit" className="bg-primary text-primary-foreground">
           Search Order
         </Button>
+      </form>
 
-        {error && (
+      {error && (
           <div className="p-4 rounded-md bg-red-50 text-red-600 text-sm font-medium">
             {error}
           </div>
@@ -94,7 +95,6 @@ export default function OrderStatusPage() {
             </CardContent>
           </Card>
         )}
-      </form>
     </div>
   );
 };
