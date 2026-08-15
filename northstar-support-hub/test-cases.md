@@ -22,14 +22,17 @@ Status legend: ✅ Pass | ❌ Fail | ⏳ Blocked (waiting on another member's fe
 | OS-004 | Search with whitespace around order ID | Valid order with surrounding whitespace should still be handled correctly | ✅ Pass — Fixed by trimming whitespaces before lookup and repeated the tests with ' ord-123456 ' |
 | OS-005 | Result card matches design tokens | Uses the agreed design tokens and consistent styling | ⏳ Not yet verified |
 
-## 3. Returns & Refunds — blocked until Member 3 pushes code
+
+## 3. Returns & Refunds — tested against Member 3 implementation
 | ID | Test | Expected | Status |
 |---|---|---|---|
-| RR-001 | Start guided return with valid order | Flow begins, correct steps shown | ⏳ Blocked |
-| RR-002 | Select a return reason | Selection persists to next step | ⏳ Blocked |
-| RR-003 | Attempt return on ineligible order | Clear message on why it's not eligible | ⏳ Blocked |
-| RR-004 | Complete full flow end-to-end | Final confirmation/refund guidance shown | ⏳ Blocked |
-| RR-005 | Abandon flow midway and return to Home | No broken state on revisiting `/returns` | ⏳ Blocked |
+| RR-001 | Start guided return with valid order | Flow begins and correct order details are shown | ✅ Pass |
+| RR-002 | Select a return reason | Selected reason persists and enables Continue | ✅ Pass |
+| RR-003 | Attempt return on ineligible order | Clear explanation shown and return cannot proceed | ✅ Pass |
+| RR-004 | Complete full flow end-to-end | Confirmation, return ID, selected reason, and refund guidance shown | ✅ Pass |
+| RR-005 | Start a new return after completion | Previous state clears and a new lookup can begin | ✅ Pass |
+| RR-006 | Search with leading/trailing whitespace | Valid order is found after whitespace is trimmed | ✅ Pass |
+| RR-007 | Invalid order lookup | Error appears only after Check Return is clicked | ✅ Pass |
 
 ## 4. Error Handling — partially testable
 | ID | Test | Expected | Status |
@@ -48,3 +51,10 @@ Status legend: ✅ Pass | ❌ Fail | ⏳ Blocked (waiting on another member's fe
 - This file will be updated continuously through the sprint, not submitted once at the end.
 
 - Development environment note: The application runs correctly on `localhost:3000`. Access through the LAN address (`10.10.57.138:3000`) loads the application but Next.js HMR/WebSocket requests fail with `ERR_INVALID_HTTP_RESPONSE`, and network-based interaction is therefore unreliable. Functional QA results are based on the local development environment.
+
+
+### Returns QA notes
+
+Tested the Returns & Refunds flow after Member 3's implementation was merged into the QA branch. Verified valid order lookup, return-reason selection, ineligible-order handling, completion/confirmation flow, state reset for a new return, whitespace-tolerant order lookup, and invalid-order validation.
+
+Small UX/logic fixes were applied in `app/returns/page.tsx` to prevent premature lookup errors, clear stale state between searches, properly handle ineligible orders, and provide a clearer guided return flow with confirmation details.
