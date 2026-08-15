@@ -43,15 +43,13 @@ Status legend: ✅ Pass | ❌ Fail | ⏳ Blocked (waiting on another member's fe
 | EH-004 | Network/data file missing or malformed | App shows fallback, doesn't hard-crash | ⏳ Blocked |
 
 ## Notes
+
 - UX-002 has been flagged to Member 1 (empty homepage subtitle) — awaiting fix, do not edit `app/page.tsx` directly per Handoff rules.
 - Order Status testing is now active because Member 2's feature has been integrated into main.
-- OS-004 is a reproducible usability/input-handling issue: surrounding whitespace causes a valid order ID to be rejected.
-- UX-002 has been flagged to Member 1 (empty homepage subtitle) — awaiting fix, do not edit `app/page.tsx` directly per Handoff rules.
-- Returns & Refunds remains blocked pending Member 3's implementation.
+- OS-004 was identified as a usability/input-handling issue and fixed by trimming surrounding whitespace before lookup.
+- Returns & Refunds testing is complete against Member 3's implementation. QA findings and UX fixes have been documented below.
+- Member 4's work has not yet been reviewed and is outside the completed QA scope.
 - This file will be updated continuously through the sprint, not submitted once at the end.
-
-- Development environment note: The application runs correctly on `localhost:3000`. Access through the LAN address (`10.10.57.138:3000`) loads the application but Next.js HMR/WebSocket requests fail with `ERR_INVALID_HTTP_RESPONSE`, and network-based interaction is therefore unreliable. Functional QA results are based on the local development environment.
-
 
 ### Returns QA notes
 
