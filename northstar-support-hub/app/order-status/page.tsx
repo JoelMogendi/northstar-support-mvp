@@ -54,8 +54,9 @@ export default function OrderStatusPage() {
         <Button type="submit" className="bg-primary text-primary-foreground">
           Search Order
         </Button>
+      </form>
 
-        {error && (
+      {error && (
           <div className="p-4 rounded-md bg-red-50 text-red-600 text-sm font-medium">
             {error}
           </div>
@@ -73,7 +74,7 @@ export default function OrderStatusPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 bg-white rounded-md shadow-sm">
                   <p className="text-sm text-muted-foreground mb-1">Status</p>
                   <p className="font-semibold">{result.status}</p>
@@ -94,7 +95,6 @@ export default function OrderStatusPage() {
             </CardContent>
           </Card>
         )}
-      </form>
     </div>
   );
 };

@@ -10,9 +10,9 @@ const links = [
 export default function Navbar() {
   return (
     <header className="border-b bg-white sticky top-0 z-10">
-      <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+      <nav className="max-w-5xl mx-auto flex items-center justify-between flex-wrap gap-y-2 px-6 py-4">
         <span className="font-bold text-lg">Northstar Support Hub</span>
-        <ul className="flex gap-6">
+        <ul className="flex flex-wrap gap-4 sm:gap-6">
           {links.map((link) => (
             <li key={link.href}>
               <Link
