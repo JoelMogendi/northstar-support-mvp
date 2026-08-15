@@ -40,7 +40,7 @@ Status legend: ✅ Pass | ❌ Fail | **BLOCKED** (waiting on another member's fe
 | ID | Test | Expected | Status |
 |---|---|---|---|
 | EH-001 | Navigate to a non-existent route (e.g. `/foo`) | Next.js 404 page shown, app doesn't crash | ✅ Pass |
-| EH-002 | Order Status page with no data yet | Placeholder text shown, no console error | ✅ Pass (verified via build) |
+| EH-002 | Order Status page loads with no search performed | Search form loads without errors and no result/error is shown before submission | ✅ Pass (verified via build) |
 | EH-003 | Malformed input in future search forms | Graceful validation message, no unhandled exception | **BLOCKED** |
 | EH-004 | Network/data file missing or malformed | App shows fallback, doesn't hard-crash | **BLOCKED** |
 
